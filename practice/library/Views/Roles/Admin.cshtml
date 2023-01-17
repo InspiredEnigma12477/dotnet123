@@ -1,0 +1,27 @@
+@using BOL;
+@{
+    ViewData["Title"] = "Admin Page";
+}
+
+@{
+    List<user> users=(List<user>)ViewData["list"];
+
+<div class="text-center">
+    <h1 class="display-4">Welcome Admin</h1>
+    <a href="Admin">Seller_List</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Add_Seller</a>
+    <hr/>
+   
+        <table>
+            <tr>
+                <th>id</th><th>uname</th><th>email</th><th>password</th>
+            </tr>
+             @foreach (user item in users)
+    {
+            <tr>
+                <td>@item.Userid</td><td>@item.Username</td><td>@item.Email</td><td>@item.Password</td>
+            </tr>
+    }
+     </table>
+    
+</div>
+}

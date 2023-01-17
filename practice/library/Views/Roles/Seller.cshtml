@@ -1,0 +1,27 @@
+﻿@using BOL;
+@{
+    ViewData["Title"] = "Seller Page";
+}
+
+@{
+
+    List<Book> books=(List<Book>)ViewData["blist"];
+<div class="text-center">
+    <h1 class="display-4">Welcome Seller</h1>
+    <a href="Seller">Book_List</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Form">Add_Book</a>
+    <hr/>
+
+    <table>
+            <tr>
+                <th>id</th><th>Bname</th><th>Category</th><th>Price</th>
+            </tr>
+             @foreach (Book item in books)
+    {
+            <tr>
+                <td>@item.Bookid</td><td>@item.Bname</td><td>@item.Author</td><td>@item.Category</td><td>@item.Price</td><td><a href="DeleteBook/@item.Bookid">Delete</a></td>
+            </tr>
+    }
+     </table>
+    
+</div>
+}
